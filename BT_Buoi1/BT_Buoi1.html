@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="bai5.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.7.1.js"
+			  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+			  crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+        $('#registrationForm').submit(function(e) {
+          
+        e.preventDefault();
+
+        var username = $('#username').val();
+        var password = $('#password').val();
+        var valid = true;
+        
+        // Kiểm tra username
+        if (username.length <= 4) {
+          alert('Tên đăng nhập phải lớn hơn 4 ký tự');
+          valid = false;
+        }
+
+        // Kiểm tra pass
+        if (password.length < 5) {
+          alert('Mật khẩu không được ít hơn 5 kí tự');
+          valid = false;
+        }
+
+        // Submit form, nếu tất cả điều kiện đều pass
+        if (valid) {
+          this.submit();
+        }
+  });
+});
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập buổi 1</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Đăng Nhập</h2>
+
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="username">Tên đăng nhập</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="password">Mật khẩu</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+         
+          <div class="form-group">
+            <button type="submit">Đăng Nhập</button>
+          </div>
+        </form>
+      </div>
+      
+</body>
+</html>
